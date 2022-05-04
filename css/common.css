@@ -37,6 +37,11 @@ header {
     background: var(--color-theme);
 }
 
+.favicon{
+    background-color:#00594c ;
+    width:50px;
+}
+
 nav>ul {
     display: flex;
     justify-content: space-between;
@@ -89,6 +94,10 @@ h2 {
     text-align: center;
 }
 
+p {
+    text-align: center;
+}
+
 h3 {
     color: var(--color-theme);
     margin: 8px 0;
@@ -130,3 +139,4 @@ main p {
         padding-bottom: 20px;
     }
 }
+
