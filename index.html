@@ -25,16 +25,18 @@
     <!-- Contenido principal de la página -->
     <main>
         <h2>El Clima Ahora</h2>
-            <section id="form-city-list">
-                <form action="">
-                    <select name="seleccionar ciudad">
-                        <option value="SELECCIONAR CIUDAD" disabled selected >Seleccionar ciudad</option>
-                        <option value="ROSARIO">Rosario</option>
-                        <option value="RAFAELA">Rafaela</option>
-                      </select>
-                    <button>Consultar</button>
-                </form>
-            </section>
+
+        <section id="form-city-list">
+            <form action="">
+                <select name="seleccionar ciudad" class="field">
+                    <option value="SELECCIONAR CIUDAD" disabled selected >Seleccionar ciudad</option>
+                    <option value="ROSARIO">Rosario</option>
+                    <option value="RAFAELA">Rafaela</option>
+                  </select>
+                <button>Consultar</button>
+            </form>
+        </section>
+
         <section id="section-weather-result">
             <div class="card">
                 <h3>Cañada de Gomez</h3>
@@ -46,12 +48,15 @@
                 <p>Presion: 1011 P</p>
             </div>
         </section>
+
     </main>
+
     <footer>
         <p>
             Desarrollado con ♥ - LC2
         </p>
     </footer>
+    
 </body>
 
 </html>

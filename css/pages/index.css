@@ -2,13 +2,14 @@
     text-align: center;
     border: 1px medium black;
     border-radius: 30px;
-    padding: 5px 5px;
     width: 260px;
     box-shadow: 5px 5px 25px black;
+    margin-top: 50px;
 }
 
-.card>p{
+.card p{
     font-weight: bolder;
     margin-bottom: 10px;
     font-size: 13px;
 }
+
