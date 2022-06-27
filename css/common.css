@@ -2,15 +2,22 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
 }
 
-:root {
+ :root {
     /* Declaro variables CSS con colores principales */
     --color-theme: #00594c;
     --color-active: #5df2d6;
     --color-back-active: #04957d;
-    --color-gradient: linear-gradient(to right, var(--color-theme),var(--color-back-active));
+    --color-gradient: linear-gradient(to right, var(--color-theme), var(--color-back-active));
+    --color-success: #28a745; /*Color de aprobación*/
+    --color-warning: #ffc107;/*Color de las advertencias*/
+    --color-error: #dc3545;/*Color para los errores*/
+}
+
+#logo-clima {
+    margin-right: 25px;
 }
 
 body {
@@ -34,12 +41,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: var(--color-theme);
-}
+    background: var(--color-gradient);
+    border-bottom-left-radius: 60px; /*Margen inferior izquierdo redondeado */
+    border-bottom-right-radius: 60px; /*Margen inferior derecho redondeado */
+    border-bottom:3px solid var(--color-active);
 
-.favicon{
-    background-color:#00594c ;
-    width:50px;
 }
 
 nav>ul {
@@ -66,8 +72,8 @@ nav li.current-page a {
     color: var(--color-theme);
     background-color: var(--color-active);
     pointer-events: none;
-    border-top-left-radius:8px;
-    border-top-right-radius:8px;
+    border-top-left-radius: 10px; /*Borde superior izquierdo de seleccion de pestaña redondeado*/
+    border-top-right-radius: 10px; /*Borde superior derecho de seleccion de pestaña redondeado*/
 }
 
 main {
@@ -75,13 +81,12 @@ main {
     overflow: auto;
     padding: 16px;
     padding-bottom: 60px;
-    height: calc (100% - 120px);
+    height: calc(100% - 120px);
 }
 
 h1 {
     text-align: center;
-    margin:
-        0;
+    margin: 0;
     color: white;
 }
 
@@ -93,10 +98,6 @@ h1>img {
 h2 {
     color: var(--color-theme);
     margin: 16px 0;
-    text-align: center;
-}
-
-p {
     text-align: center;
 }
 
@@ -113,11 +114,14 @@ main section {
 footer {
     position: fixed;
     bottom: 0px;
-    background: var(--color-theme);
+    background: var(--color-gradient); /*Color del footer acorde al de la página*/
     width: 100%;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-top-left-radius: 60px; /*Margen inferior izquierdo redondeado */
+    border-top-right-radius: 60px;
+    border-top:3px solid var(--color-active);
 }
 
 footer p {
@@ -129,33 +133,72 @@ main p {
     margin-bottom: 16px;
 }
 
-button{
-    background-color: #04957d;
-    padding: 10px;
+input {
+    padding: 8px;
     border-radius: 5px;
-    color:white;
+    margin-bottom: 5px;
 }
 
+select {
+    padding: 8px; /*Tamaño del boton de seleccion*/
+    border-radius: 5px; /*Bordes redondeados al boton de select*/
+    border: 2px solid black;
+}
+
+button {
+    padding: 8px; /*Boton de consulta mismo tamaño que el de select*/
+    border-radius: 10px; /*Bordes redondeados al boton de select*/
+    background-color: var(--color-theme); /*Mismo background que el resto de los botones*/
+    color: white; /*Color de la letra*/
+    margin-top: 10px; /*Distancia de margen con la seccion de arriba*/
+    margin-bottom: 10px; /*Distancia de margen con la seccion de abajo*/
+}
 button:hover{
     cursor:pointer;
 }
 
-.field{
-    padding: 10px;
-    border: 2px solid black;
+textarea {
+    resize: none;
+    padding: 8px;
     border-radius: 5px;
+    margin-bottom: 5px;
+    border: 2px solid black;
+}
+
+.messages-add-city{
+    display: block;
+    text-align: center;
+}
+.messages-add-city div {
+    width: 510px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+}
+.message-success{
+    display: none;
+    background-color: #28a745;
+}
+.message-error{
+    display: none;
+    background-color: #dc3545;
+}
+.message-waring{
+    display: none;
+    background-color: #ffc107;
 }
 
 /* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
+
 @media (min-width: 400px) {
     main {
         padding-left: 10%;
         padding-right: 10%;
     }
-
     footer {
         padding-top: 20px;
         padding-bottom: 20px;
     }
 }
-

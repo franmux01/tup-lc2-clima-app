@@ -1,5 +1,16 @@
 .add-city{
-  display:flex; 
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#parrafoBoton{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .add-city .field{
@@ -10,21 +21,43 @@
     display: block;
     text-align: center;
 }
-.messages-add-city p {
+
+#ingresarCiudad{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto ;
+}
+
+p.success {
     width: 500px;
     margin: 30px auto;
     padding: 20px 30px;
     font-weight: bold;
     color: white;
     border-radius: 20px;
+    background-color: var(--color-success);
+    text-align: center;
 }
 
-.verde{
-    background-color: #28a745;
+p.error {
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    background-color: var(--color-error);
+    text-align: center;
 }
-.rojo{
-    background-color: #dc3545;
-}
-.amarillo{
-    background-color: #ffc107;
+
+p.warning {
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    background-color: var(--color-warning);
+    text-align: center;
 }

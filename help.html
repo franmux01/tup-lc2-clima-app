@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clima App</title>
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="shorcut icon" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/pages/help.css">
+    <script src="./js/pages/help.js" defer></script>
+    <script src="./js/common.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,8 +19,8 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="/index.html">Clima</a></li>
-                <li><a href="/add-city.html">Agregar Ciudad</a></li>
+                <li><a href="./index.html">Clima</a></li>
+                <li><a href="./add-city.html">Agregar Ciudad</a></li>
                 <li class="current-page"><a href="#">Ayuda</a></li>
             </ul>
         </nav>
@@ -26,8 +29,8 @@
     <main>
         <h2>Ayudo Clima App v.1.0</h2>
         <div class="description-help">
-            <p>Esta app te permite consultar el clima de una ciudad en particular utilizando la API <a href="“https://openweathermap.org/api”" target="_blank">OpenWeatherMap</a></p>
-            <P>Para poder consultar el clima, primero deberá <a href="/add-city.html">Agregar una ciudad</a> y luego seleccionar la Ciudad en cuestión desde la página <a href="index.html">Clima</a></P>
+            <p>Esta app te permite consultar el clima de una ciudad en particular utilizando la API <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></p>
+            <P>Para poder consultar el clima, primero deberá <a href="./add-city.html">Agregar una ciudad</a> y luego seleccionar la Ciudad en cuestión desde la página <a href="index.html">Clima</a></P>
         </div>
         <section class="section-help">
             <form class="form-help" action="">
@@ -47,7 +50,8 @@
                 </div>
             </form>
         </section>
-        <p class="alert-message">Ingrese un Email valido</p>
+        <div id="emailBad"></div>
+        <!-- <p class="alert-message">Ingrese un Email valido</p> -->
     </main>
     <footer>
         <p>

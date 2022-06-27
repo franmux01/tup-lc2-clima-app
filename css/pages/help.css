@@ -23,7 +23,7 @@
 .container-button-help input:last-child{
     margin-left: 5px;
 }
-.alert-message{
+p.alert-message{
     width: 390px;
     margin: 30px auto;
     padding: 20px 30px;
