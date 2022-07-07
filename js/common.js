@@ -1,3 +1,35 @@
+function printMensaje(tipo,divId){
+
+    let mensaje = document.createElement('P')
+    mensaje.setAttribute('class',`alert ${tipo}`)
+
+    let text = ''
+
+    switch (tipo) {
+        case 'success':
+            text = document.createTextNode('Ciudad agregada con éxito')
+            break;
+
+        case 'warning':
+            text = document.createTextNode('La ciudad ingresada ya se encuentra almacenada')
+            break;
+
+        case 'error':
+            text = document.createTextNode('Error: La ciudad ingresada no se encuentra en la API o se produjo un error al consultar')
+            break;
+    
+        default:
+            break;
+    }
+
+    mensaje.appendChild(text) 
+
+    document.getElementById(divId).appendChild(mensaje);
+
+    removeMessage();
+    
+}
+
 function getCitiesFromLocalStorage() {
     let cities = localStorage.getItem("CITIES");
     if(cities) {

@@ -5,29 +5,26 @@ function removeMessage() {
 }
 
 function validarEmail(email) {
-  
-    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-    
-    if (regex.test(email)){
-        alert("La direccion del email "+email+" es correcta.")
-        document.getElementById('formulario').submit()
-    } else {
-        document.getElementById('emailBad').innerHTML += mensajeAlert; 
-        removeMessage();
-      /* alert("La dirección de email es incorrecta."); */
-    }
+  if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
+   alert("La dirección de email " + email + " es correcta!.");
+   document.getElementById('formulario').submit()
+  } else {
+    document.getElementById('emailBad').appendChild(mensajeAlert)
+    removeMessage();
   }
-      
-  let btnSubmit = document.getElementById('submitBtn')
-  
-  let mensajeAlert = '<p class="alert-message">Ingrese un Email valido</p>';
-  
-  
-  btnSubmit.addEventListener('click',function(event){
-  event.preventDefault();
-    
-    let email = document.getElementById('email').value
-  
-    validarEmail(email)
-      
-  })
+}
+
+let btnSubmit = document.getElementById('submitBtn')
+
+let mensajeAlert = document.createElement('P')
+mensajeAlert.setAttribute('class','alert-message')
+
+let msj= document.createTextNode('Ingrese un email valido')
+mensajeAlert.appendChild(msj)
+
+
+btnSubmit.addEventListener('click',function(event){
+  event.preventDefault();  
+  let email = document.getElementById('email').value
+  validarEmail(email)    
+})

@@ -27,26 +27,24 @@ async function addCityToLocalStorage() {
     nuevaCiudad = nuevaCiudad.toUpperCase() 
 
     switch(await validateCity(nuevaCiudad)) {
+
         case "success": 
             cities.push(nuevaCiudad); 
-            localStorage.setItem("CITIES", JSON.stringify(cities)); 
-            document.getElementById("messajeBox").innerHTML += mensajeExito;
-            removeMessage();
+            localStorage.setItem("CITIES", JSON.stringify(cities));
+            
+            printMensaje('success','messajeBox')
+
             break;
+
         case "warning":
-            document.getElementById("messajeBox").innerHTML += mensajeAdv; 
-            removeMessage();
+            printMensaje('warning','messajeBox')
             break;
+
         case "error":
-            document.getElementById("messajeBox").innerHTML += mensajeError; 
-            removeMessage();
+            printMensaje('error','messajeBox')
             break;
     };
 };
-
-let mensajeExito = '<p class="alert success">Ciudad agregada con éxito</p>';
-let mensajeError = '<p class="alert error">Error: La ciudad ingresada no se encuentra en la API o se produjo un error al consultar</p>';
-let mensajeAdv = '<p class="alert warning">La ciudad ingresada ya se encuentra almacenada</p>';
 
 let buttonAddCity = document.getElementById("buttonAdd");
 buttonAddCity.addEventListener("click", addCityToLocalStorage);
